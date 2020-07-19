@@ -17,9 +17,9 @@ jobs:
     # The type of runner that the job will run on
     runs-on: windows-latest
     
-    strategy:
-      matrix:
-        targetPlatform: [x86]
+    #strategy:
+    #  matrix:
+    #    targetPlatform: [x86]
         
     env:
       Solution_Path: Source\WpfApp\WpfApp.sln
