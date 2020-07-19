@@ -38,6 +38,6 @@ jobs:
       
     # Build WPF app
     - name: Build WPF app
-      uses: msbuild abhilashca/wpf-github-actions-dot-net/Source/WpfApp/WpfApp.sln /p:Configuration=Release
+      uses: msbuild abhilashca/wpf-github-actions-dot-net@Source/WpfApp/WpfApp.sln /p:Configuration=Release
 
    
