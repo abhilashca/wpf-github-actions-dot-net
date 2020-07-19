@@ -52,6 +52,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: wpf_exe
-        path: .\Source\WpfApp\WpfApp\publish
+        path: bin\release\app.publish
       
    
