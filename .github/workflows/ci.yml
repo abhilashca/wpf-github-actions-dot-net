@@ -32,12 +32,12 @@ jobs:
     - name: checks-out repository
       uses: actions/checkout@v2
     
-    # Install .NET workload
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
-              
-    # Add  MsBuild
-    - name: Setup MSBuild.exe
+    # Setup MSBuild
+    - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.0
+      
+    # Build WPF app
+    - name: Build WPF app
+      uses: msbuild Source\WpfApp\WpfApp.sln /p:Configuration=Release
 
    
