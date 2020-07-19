@@ -34,10 +34,11 @@ jobs:
     
     # Setup MSBuild
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.0
+      uses: warrenbuckley/Setup-MSBuild@v1
       
     # Build WPF app
     - name: Build WPF app
-      uses: msbuild {abhilashca}/{wpf-github-actions-dot-net}/Source/WpfApp/WpfApp.sln /p:Configuration=Release
+      working-directory: Source/WpfApp
+      run: msbuild WpfApp.sln /p:Configuration=Release
 
    
