@@ -38,6 +38,6 @@ jobs:
       
     # Build WPF app
     - name: Build WPF app
-      uses: msbuild Source\WpfApp\WpfApp.sln /p:Configuration=Release
+      uses: msbuild "Source\WpfApp\WpfApp.sln" /p:Configuration=Release
 
    
