@@ -33,11 +33,6 @@ jobs:
       uses: actions/checkout@v2
     
     # Install .NET workload
-    - name: Install .NET
-      uses: actions/setup-dotnet@v1      
-      with:
-        dotnet-version: 4.5.2
-        
     - name: Build with dotnet
       run: dotnet build --configuration Release
               
