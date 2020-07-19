@@ -36,7 +36,7 @@ jobs:
       uses: nuget/setup-nuget@v1
       
     - name: Restore nuget
-      uses: nuget restore abhilashca/wpf-github-actions-dot-net/source/WpfApp/WpfApp.sln
+      uses: nuget restore abhilashca\wpf-github-actions-dot-net\source\WpfApp\WpfApp.sln
     
     # Setup MSBuild
     - name: Setup MSBuild
