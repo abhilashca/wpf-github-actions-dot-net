@@ -46,5 +46,12 @@ jobs:
     - name: Build WPF app
       #working-directory: Source/WpfApp
       run: msbuild $env:Solution_Path /p:Configuration=Release
-
+      
+    # Upload artifact
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: wpf_exe
+        path: .\source\WpfApp\Artifacts
+      
    
