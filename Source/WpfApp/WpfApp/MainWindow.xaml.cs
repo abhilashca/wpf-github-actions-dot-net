@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace WpfApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            JArray array = new JArray();
+            array.Add("Manual text");
+            array.Add(new DateTime(2000, 5, 23));
+
+            JObject o = new JObject();
+            o["MyArray"] = array;
+
+            string json = o.ToString();
+
+            MessageBox.Show(json);
         }
     }
 }
