@@ -29,16 +29,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - name: checks-out repository
+      uses: actions/checkout@v2
     
-    # Install .NET workload
-    - name: Install .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 4.5.2
-        
-    # Add  MsBuild
-    - name: Setup MSBuild.exe
+    # Setup MSBuild
+    - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.0
+      
+    # Build WPF app
+    - name: Build WPF app
+      #working-directory: Source/WpfApp
+      run: msbuild $env:Solution_Path /p:Configuration=Release
 
    
