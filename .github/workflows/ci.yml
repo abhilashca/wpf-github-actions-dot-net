@@ -24,6 +24,7 @@ jobs:
     env:
       Solution_Path: Source\WpfApp\WpfApp.sln
       Wpf_Project_Path: Source\WpfApp\WpfApp\WpfApp.csproj
+      Published_Path: 'bin\Release\app.publish\Application Files'
     
     
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -52,6 +53,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: wpf_exe
-        path: publishedApplication%20Files
+        path: ${{Published_Path}}
       
    
