@@ -45,6 +45,13 @@ jobs:
     - name: Execute unit tests
       run: dotnet test $env:Test_Project_Path -c Release
       
+    # Setup MSBuild
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.0
+      
+    - name: Build test project
+      run: msbuild $env:Test_Project_Path /p:Configuration=Release
+      
     - name: Generate HTML report
       run: ${{env.XUnit_Console_Runner_Path}} WpfApp.Business.Tests\bin\Release\WpfApp.Business.Tests.dll -html TestResults\TestResults.html
       
@@ -56,8 +63,8 @@ jobs:
         path: ${{env.Test_Project_Report_Path}}
     
     # Setup MSBuild
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.0
+    #- name: Setup MSBuild
+    #  uses: microsoft/setup-msbuild@v1.0.0
       
     # Build WPF app
     - name: Build WPF app
