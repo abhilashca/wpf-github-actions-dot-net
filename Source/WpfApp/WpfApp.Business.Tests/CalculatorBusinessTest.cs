@@ -18,7 +18,7 @@ namespace WpfApp.Business.Tests
         }
 
         [Theory]
-        [InlineData(2, 3, 5)]
+        [InlineData(2, 3, 7)]
         [InlineData(5, 3, 8)]
         [InlineData(8, 2, 10)]
         public void PerformSum(int x, int y, int result)
