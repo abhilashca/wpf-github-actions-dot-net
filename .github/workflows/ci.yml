@@ -25,8 +25,9 @@ jobs:
       Solution_Path: Source\WpfApp\WpfApp.sln
       Wpf_Project_Path: Source\WpfApp\WpfApp\WpfApp.csproj
       Test_Project_Path: Source\WpfApp\WpfApp.Business.Tests\WpfApp.Business.Tests.csproj
-      Test_Project_Report_Path: Source\WpfApp\WpfApp.Business.Tests\TestResults
+      Test_Project_Report_Path: Source\WpfApp\TestResults
       Published_Path: 'Source\WpfApp\WpfApp\bin\Release\app.publish'
+      XUnit_Console_Runner_Path: Source\WpfApp\packages\xunit.runner.console.2.4.1\tools\net452\xunit.console.exe
     
     
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -43,6 +44,9 @@ jobs:
       
     - name: Execute unit tests
       run: dotnet test $env:Test_Project_Path -c Release
+      
+    - name: Generate HTML report
+      run: ${{env.XUnit_Console_Runner_Path}} WpfApp.Business.Tests\bin\Release\WpfApp.Business.Tests.dll -html TestResults\TestResults.html
       
     - name: Attach test report
       if: always()
