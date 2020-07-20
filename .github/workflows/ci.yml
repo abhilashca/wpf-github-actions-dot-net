@@ -24,6 +24,8 @@ jobs:
     env:
       Solution_Path: Source\WpfApp\WpfApp.sln
       Wpf_Project_Path: Source\WpfApp\WpfApp\WpfApp.csproj
+      Test_Project_Path: Source\WpfApp\WpfApp.Business.Tests\WpfApp.Business.Tests.csproj
+      Test_Project_Report_Path: Source\WpfApp\WpfApp.Business.Tests\TestResults
       Published_Path: 'Source\WpfApp\WpfApp\bin\Release\app.publish'
     
     
@@ -38,6 +40,16 @@ jobs:
       
     - name: Restore nuget
       run: nuget restore ${{env.Solution_Path}}
+      
+    - name: Execute unit tests
+      run: dotnet test $env:Test_Project_Path --logger:xunit
+      
+    - name: Attach test report
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: test-reports
+        path: ${{env.Test_Project_Report_Path}}
     
     # Setup MSBuild
     - name: Setup MSBuild
