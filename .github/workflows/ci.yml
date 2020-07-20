@@ -42,7 +42,7 @@ jobs:
       run: nuget restore ${{env.Solution_Path}}
       
     - name: Execute unit tests
-      run: dotnet test $env:Test_Project_Path --logger:xunit
+      run: dotnet test $env:Test_Project_Path -c Release
       
     - name: Attach test report
       if: always()
