@@ -37,7 +37,7 @@ jobs:
       uses: nuget/setup-nuget@v1
       
     - name: Restore nuget
-      run: nuget restore .\source\WpfApp\WpfApp.sln
+      run: nuget restore ${{env.Solution_Path}}
     
     # Setup MSBuild
     - name: Setup MSBuild
