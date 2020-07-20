@@ -25,7 +25,7 @@ jobs:
       Solution_Path: Source\WpfApp\WpfApp.sln
       Wpf_Project_Path: Source\WpfApp\WpfApp\WpfApp.csproj
       Test_Project_Path: Source\WpfApp\WpfApp.Business.Tests\WpfApp.Business.Tests.csproj
-      Test_Project_Report_Path: Source\WpfApp\TestResults
+      Test_Project_Report_Path: Source\WpfApp\TestResults\TestResults.html
       Published_Path: 'Source\WpfApp\WpfApp\bin\Release\app.publish'
       XUnit_Console_Runner_Path: Source\WpfApp\packages\xunit.runner.console.2.4.1\tools\net452\xunit.console.exe
     
