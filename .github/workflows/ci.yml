@@ -17,13 +17,14 @@ jobs:
     # The type of runner that the job will run on
     runs-on: windows-latest
     
-    strategy:
-      matrix:
-        targetPlatform: [x86]
+    #strategy:
+    #  matrix:
+    #    targetPlatform: [x86]
         
     env:
       Solution_Path: Source\WpfApp\WpfApp.sln
       Wpf_Project_Path: Source\WpfApp\WpfApp\WpfApp.csproj
+      Published_Path: 'Source\WpfApp\WpfApp\bin\Release\app.publish'
     
     
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -45,6 +46,13 @@ jobs:
     # Build WPF app
     - name: Build WPF app
       #working-directory: Source/WpfApp
-      run: msbuild $env:Solution_Path /p:Configuration=Release
-
+      run: msbuild $env:Solution_Path /target:publish /p:Configuration=Release
+      
+    # Upload artifact
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: wpf_publish
+        path: ${{env.Published_Path}}
+      
    

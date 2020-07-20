@@ -1,3 +1,3 @@
 # wpf-github-actions-dot-net
 
-![](https://github.com/abhilashca/wpf-github-actions-dot-net/workflows/ci/badge.svg?branch=master)
+![Wpf CI](https://github.com/abhilashca/wpf-github-actions-dot-net/workflows/Wpf%20CI/badge.svg)
