@@ -138,5 +138,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfApp.Business\WpfApp.Business.csproj">
+      <Project>{ab29ab92-68b0-4e43-9b62-efbb7ef31919}</Project>
+      <Name>WpfApp.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

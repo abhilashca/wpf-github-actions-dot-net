@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp.Business;
 
 namespace WpfApp
 {
@@ -28,12 +29,19 @@ namespace WpfApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            CalculatorBusiness cb = new CalculatorBusiness();
+            int sum = cb.Sum(2, 3);
+            int diff = cb.Difference(10, 8);
+
+            JObject jo = new JObject();
+            
+
             JArray array = new JArray();
-            array.Add("Manual text");
-            array.Add(new DateTime(2000, 5, 23));
+            array.Add(sum);
+            array.Add(diff);
 
             JObject o = new JObject();
-            o["MyArray"] = array;
+            o["Calculator Array"] = array;
 
             string json = o.ToString();
 
