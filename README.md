@@ -1,4 +1,4 @@
-# WPF .NET Framework and GitHub Actions
+# WPF .NET, xUnit and GitHub Actions
 
 ![Wpf CI](https://github.com/abhilashca/wpf-github-actions-dot-net/workflows/Wpf%20CI/badge.svg)
 
