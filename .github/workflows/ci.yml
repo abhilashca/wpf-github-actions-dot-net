@@ -27,7 +27,6 @@ jobs:
       Test_Project_Path: Source\WpfApp\WpfApp.Business.Tests\WpfApp.Business.Tests.csproj
       Test_Project_Report_Path: Source\WpfApp\TestResults\TestResults.html
       Test_Project_Assembly_Path : Source\WpfApp\WpfApp.Business.Tests\bin\Release\WpfApp.Business.Tests.dll
-      Test_Project_HTMLResult_Path: Source\WpfApp\TestResults\TestResults.html
       Published_Path: Source\WpfApp\WpfApp\bin\Release\app.publish
       XUnit_Console_Runner_Path: Source\WpfApp\packages\xunit.runner.console.2.4.1\tools\net452\xunit.console.exe
     
@@ -55,7 +54,7 @@ jobs:
       run: msbuild $env:Test_Project_Path /p:Configuration=Release
       
     - name: Generate HTML report
-      run: ${{env.XUnit_Console_Runner_Path}} ${{env.Test_Project_Assembly_Path}} -html ${{env.Test_Project_HTMLResult_Path}}
+      run: ${{env.XUnit_Console_Runner_Path}} ${{env.Test_Project_Assembly_Path}} -html ${{env.Test_Project_Report_Path}}
       
     - name: Attach test report
       if: always()
