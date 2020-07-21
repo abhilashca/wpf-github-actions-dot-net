@@ -7,9 +7,10 @@ Hey there!
 This is a sample repository on how to setup  GitHub Actions for WPF.NET project with xUnit tests results.
 
 Below are the scenarios covered in the project:
-- WPF.NET v4.5.2 with business layer
+- WPF.NET publishing
 - Nuget
 - xUnit
 - xUnit HTML report
+- uploads Artifcats (app publish and test results)
 
 Thanks
