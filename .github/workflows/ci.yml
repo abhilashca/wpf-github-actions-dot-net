@@ -79,4 +79,17 @@ jobs:
         name: wpf_publish
         path: ${{env.Published_Path}}
       
+    # Send email
+    - name: Send email
+      uses: dawidd6/action-send-mail@v2.2.0
+      with: 
+        server_address: ${{secrets.EMAIL_SMTP}}
+        server_port: ${{secrets.EMAIL_PORT}}
+        username: ${{secrets.EMAIL_USERNAME}}
+        password: ${{secrets.EMAIL_PASSWORD}}
+        body: Build job of ${{github.repository}} completed successfully!
+        to: ${{secrets.EMAIL_SECONDARY}}
+        from: ${{secrets.EMAIL_USERNAME}}
+        content_type: text/html
+        
    
