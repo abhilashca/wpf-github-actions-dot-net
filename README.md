@@ -12,5 +12,6 @@ Below are the scenarios covered in the project:
 - xUnit
 - xUnit HTML report
 - uploads Artifcats (app publish and test results)
+- send email results to stakeholders
 
 Thanks
